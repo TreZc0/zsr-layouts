@@ -28,6 +28,8 @@ To reiterate, please don't just download and use this bundle as-is (it won't wor
 To configure this bundle, create and edit `nodecg/cfg/zsr-layouts.json`.  
 Refer to [configschema.json](configschema.json) for the structure of this file.
 
+## Example
+For a showcase of the ZSR Community Race functions (front-end), check a recent twitch highlight on ZSR: https://www.twitch.tv/videos/210392371
 
 ## License
 zsr-layouts is provided under the Apache v2 license, which is available to read in the [LICENSE](LICENSE) file.
