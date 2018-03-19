@@ -11,10 +11,11 @@ This is a [NodeCG](http://github.com/nodecg/nodecg) v0.9 bundle. You will need t
 1. Install to `nodecg/bundles/zsr-layouts`.
 2. Install `bower` if you have not already (`npm install -g bower`)
 3. Install a compiler toolchain:
-	- **WINDOWS**: Install [`windows-build-tools`](https://www.npmjs.com/package/windows-build-tools) to install the tools necessary to compile `sgdq17-layouts`' dependencies.
-	- **LINUX**: Install `build-essential` and Python 2.7, which are needed to compile `sgdq17-layouts`' dependencies.
-4. `cd nodecg/bundles/sgdq17-layouts` and run `npm install --production`, then `bower install`
+	- **WINDOWS**: Install [`windows-build-tools`](https://www.npmjs.com/package/windows-build-tools) to install the tools necessary to compile `zsr-layouts`' dependencies.
+	- **LINUX**: Install `build-essential` and Python 2.7, which are needed to compile `zsr-layouts`' dependencies.
+4. `cd nodecg/bundles/zsr-layouts` and run `npm install --production`, then `bower install`
 5. Create the configuration file (see the [configuration][id] section below for more details)
+6. Copy the twitchPlayerSetup.json to the NodeCG root folder.
 6. Run the nodecg server: `nodecg start` (or `node index.js` if you don't have nodecg-cli) from the `nodecg` root directory.
 
 Please note that you **must manually run `npm install` for this bundle**. NodeCG currently cannot reliably compile this bundle's npm dependencies. This is an issue we hope to address in the future.
