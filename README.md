@@ -1,5 +1,5 @@
 # ZSR-Layouts
-The on-stream graphics used during ZSR Community Races
+The on-stream graphics used for ZeldaSpeedRuns Community Races
 
 This is a [NodeCG](http://github.com/nodecg/nodecg) v0.9 bundle. You will need to have NodeCG v0.9 installed to run it.
 
@@ -33,10 +33,10 @@ Refer to [configschema.json](configschema.json) for the structure of this file.
 zsr-layouts is provided under the Apache v2 license, which is available to read in the [LICENSE](LICENSE) file.
 
 ### Credits
-Designed & developed by [ZeldaSpeedruns](http://zelda.speedruns.com), original base by [Support Class](http://supportclass.net/)
+Designed & developed by [ZeldaSpeedruns](http://zelda.speedruns.com)
  - [Marwin "dragonbane0" Misselhorn](https://twitter.com/dragonbane0/)
  - [Christoph "TreZc0_" Wergen](https://twitter.com/trezc0_)
- - [Alex "Lange" Van Camp](https://twitter.com/VanCamp/)  
- - [Chris Hanel](https://twitter.com/ChrisHanel)
+ 
+ Original base (sgdq17-layouts) by [Support Class](http://supportclass.net/)
 # zsr-layouts
-# zsr-layouts
+
