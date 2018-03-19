@@ -1,0 +1,258 @@
+{
+	"Standard": {
+		"_1": {
+			"divWidth": 886,
+			"divHeight": 665,
+			"width": 1182,
+			"height": 665,
+			"left": -295,
+			"up": 0
+		},
+		"_2": {
+			"divWidth": 640,
+			"divHeight": 480,
+			"width": 853,
+			"height": 480,
+			"left": -213,
+			"up": 0
+		},
+		"_3": {
+			"divWidth": 440,
+			"divHeight": 330,
+			"width": 588,
+			"height": 331,
+			"left": -147,
+			"up": 0
+		},
+		"_4": {
+			"divWidth": 441,
+			"divHeight": 331,
+			"width": 588,
+			"height": 331,
+			"left": -147,
+			"up": 0
+		},
+		"_Bingo_1": {
+			"divWidth": 886,
+			"divHeight": 665,
+			"width": 1182,
+			"height": 665,
+			"left": -295,
+			"up": 0
+        },
+		"_Bingo_2": {
+			"divWidth": 548,
+			"divHeight": 410,
+            "width": 729,
+            "height": 410,
+            "left": -182,
+            "up": 0
+        }
+	},
+	"Widescreen": {
+		"_1": {
+			"divWidth": 966,
+			"divHeight": 544,
+			"width": 966,
+			"height": 544,
+			"left": 0,
+			"up": 0
+		},
+		"_2": {
+			"divWidth": 640,
+			"divHeight": 360,
+			"width": 640,
+			"height": 360,
+			"left": 0,
+			"up": 0
+		},
+		"_3": {
+			"divWidth": 556,
+			"divHeight": 314,
+			"width": 556,
+			"height": 314,
+			"left": 0,
+			"up": 0
+		},
+		"_4": {
+			"divWidth": 519,
+			"divHeight": 293,
+			"width": 520,
+			"height": 293,
+			"left": 0,
+			"up": 0
+		},
+		"_Bingo_1": {
+			"divWidth": 1280,
+			"divHeight": 720,
+			"width": 1280,
+			"height": 720,
+			"left": 20,
+			"up": 0
+        },
+		"_Bingo_2": {
+			"divWidth": 1280,
+			"divHeight": 720,
+			"width": 1280,
+			"height": 720,
+			"left": 20,
+			"up": 0
+        }
+	},
+	"Gameboy": {
+		"_1": {
+			"divWidth": 739,
+			"divHeight": 665,
+			"width": 1182,
+			"height": 665,
+			"left": -222,
+			"up": 0
+		},
+		"_2": {
+			"divWidth": 536,
+			"divHeight": 482,
+			"width": 857,
+			"height": 482,
+			"left": -161,
+			"up": 0
+		},
+		"_3": {
+			"divWidth": 367,
+			"divHeight": 330,
+			"width": 587,
+			"height": 330,
+			"left": -110,
+			"up": 0
+		},
+		"_4": {
+			"divWidth": 367,
+			"divHeight": 330,
+			"width": 587,
+			"height": 330,
+			"left": -110,
+			"up": 0
+		}
+	},
+	"GBA": {
+		"_1": {
+			"divWidth": 998,
+			"divHeight": 665,
+			"width": 1182,
+			"height": 665,
+			"left": -92,
+			"up": 0
+		},
+		"_2": {
+			"divWidth": 639,
+			"divHeight": 426,
+			"width": 757,
+			"height": 426,
+			"left": -59,
+			"up": 0
+		},
+		"_3": {
+			"divWidth": 489,
+			"divHeight": 326,
+			"width": 580,
+			"height": 326,
+			"left": -45,
+			"up": 0
+		},
+		"_4": {
+			"divWidth": 489,
+			"divHeight": 326,
+			"width": 580,
+			"height": 326,
+			"left": -45,
+			"up": 0
+		}
+	},
+	"DS": {
+		"_1": {
+			"divWidth": 1280,
+			"divHeight": 500,
+			"width": 1280,
+			"height": 500,
+			"left": 20,
+			"up": 0,
+			"divWidth_bottom": 1280,
+			"divHeight_bottom": 500,
+            "width_bottom": 1280,
+			"height_bottom": 500,
+			"left_bottom": 20,
+			"up_bottom": 0
+		},
+		"_2": {
+			"divWidth": 1280,
+			"divHeight": 500,
+			"width": 1280,
+			"height": 500,
+			"left": 20,
+			"up": 0,
+			"divWidth_bottom": 1280,
+			"divHeight_bottom": 500,
+            "width_bottom": 1280,
+			"height_bottom": 500,
+			"left_bottom": 20,
+			"up_bottom": 0
+		}
+	},
+	"3DS": {
+		"_1": {
+			"divWidth": 906,
+			"divHeight": 544,
+			"width": 1280,
+			"height": 720,
+			"left": -373,
+			"up": 0,
+			"divWidth_bottom": 373,
+			"divHeight_bottom": 280,
+            "width_bottom": 1268,
+			"height_bottom": 713,
+			"left_bottom": 0,
+			"up_bottom": 0
+		},
+		"_2": {
+			"divWidth": 640,
+			"divHeight": 384,
+			"width": 904,
+			"height": 509,
+			"left": -264,
+			"up": 0,
+			"divWidth_bottom": 317,
+			"divHeight_bottom": 238,
+            "width_bottom": 1080,
+			"height_bottom": 608,
+			"left_bottom": 0,
+			"up_bottom": 0
+		},
+		"_3": {
+			"divWidth": 522,
+			"divHeight": 314,
+			"width": 738,
+			"height": 415,
+			"left": -216,
+			"up": 0,
+			"divWidth_bottom": 317,
+			"divHeight_bottom": 238,
+            "width_bottom": 1127,
+			"height_bottom": 634,
+			"left_bottom": -6,
+			"up_bottom": 0
+		},
+		"_4": {
+			"divWidth": 487,
+			"divHeight": 292,
+			"width": 688,
+			"height": 387,
+			"left": -201,
+			"up": 0,
+			"divWidth_bottom": 317,
+			"divHeight_bottom": 238,
+            "width_bottom": 1127,
+			"height_bottom": 634,
+			"left_bottom": -6,
+			"up_bottom": 0
+		}
+	}
+} 
