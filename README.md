@@ -20,9 +20,9 @@ This is a [NodeCG](http://github.com/nodecg/nodecg) v0.9 bundle. You will need t
 Please note that you **must manually run `npm install` for this bundle**. NodeCG currently cannot reliably compile this bundle's npm dependencies. This is an issue we hope to address in the future.
 
 ## Usage
-This bundle is not intended to be used verbatim. Some of the codelines have be replaced with placeholders, and most of the data sources are hardcoded. We are open-sourcing this bundle in hopes that people will use it as a learning tool and base to build from, rather than just taking and using it wholesale in their own productions.
+This bundle is not intended to be used verbatim. Some of the codelines have be replaced with placeholders, and most of the hardcoded datasources have been blanked out. This bundle is open sourced so other NodeCG users have a chance to look into and benefit from the multiple extensions and dashboard functionalities created to support online speedrun events.
 
-To reiterate, please don't just download and use this bundle as-is. Build something new from it.
+To reiterate, please don't just download and use this bundle as-is (it won't work). Build something new from it.
 
 ## Configuration
 To configure this bundle, create and edit `nodecg/cfg/zsr-layouts.json`.  
