@@ -1,0 +1,102 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../../bower_components/nodecg-replicant/nodecg-replicant.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/nodecg-toast/nodecg-toast.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+
+<dom-module id="zsr-stream-reset">
+	<template>
+		<style>
+			:host {
+				@apply(--layout-vertical);
+				margin-top:30px;
+			}
+
+			#selection-ctrls {
+				@apply(--layout-horizontal);
+				@apply(--layout-start);
+				margin-bottom: 5px;
+				
+			}
+
+			#selection-ctrls > paper-button {
+				@apply(--layout-flex);
+			}
+			
+			#selection-ctrls > paper-slider {
+				@apply(--layout-flex);
+			}
+
+			#typeahead-container {
+				@apply(--layout-vertical);
+				@apply(--layout-end);
+			}
+
+			#typeahead {
+				width: 240px;
+				margin-top: -26px;
+			}
+
+			#edit-ctrls {
+				@apply(--layout-horizontal);
+				margin-top: 32px;
+			}
+
+			#reset {
+				margin-right: 0;
+				background-color:red;
+			}
+			 
+			paper-dropdown-menu, paper-listbox {
+				width: 280px;
+			}
+
+			paper-dropdown-menu {
+				height: 150px;
+				margin: auto;
+				display: block;
+			}
+			
+			#pause {
+				margin-right: 0;
+				margin-bottom: 5px;
+				background-color:black;
+			}
+				
+			#resume {
+				margin-right: 0;
+				margin-bottom: 5px;
+				background-color:black;
+			}
+
+			paper-button {
+				@apply(--layout-horizontal);
+				@apply(--layout-center-center);
+			}
+			
+			paper-slider {
+				@apply(--layout-horizontal);
+				@apply(--layout-center-center);
+			}
+			paper-slider.green {
+				--paper-slider-knob-color: var(--paper-green-500);
+				--paper-slider-active-color: var(--paper-green-500);
+			}
+			
+		</style>
+
+		<nodecg-toast id="toast"></nodecg-toast>
+
+		<div id="selection-ctrls">
+		
+			<paper-button id="reset"  class="nodecg-info" on-tap="reset" raised>
+				<iron-icon icon="clear"></iron-icon>
+				<div align=left>RESET STREAMS</div>
+		</div>
+		
+</template>
+
+	<script src="zsr-stream-reset.js"></script>
+</dom-module>

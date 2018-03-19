@@ -1,0 +1,114 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/nodecg-replicant/nodecg-replicant.html">
+<link rel="import" href="../../../bower_components/polymer/lib/mixins/mutable-data.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-slider/paper-slider.html">
+<<link rel="import" href="../../../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../../../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../../../bower_components/nodecg-toast/nodecg-toast.html">
+
+<dom-module id="zsr-music">
+	<template>
+		<style>
+			:host {
+				display: block;
+				@apply --layout-vertical;
+			}
+			
+			#label {
+				font-size: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				background-color: #C4C4C4;
+				height: 29px;
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+			}
+			
+			#stream {
+				@apply --layout-center-center;
+				@apply --layout-flex-none;
+				font-weight: 700;
+				height: 115px;
+			}
+			
+			#stream paper-button {
+				width: 128px;
+				height: 60px;
+				margin: 6px 3px;
+				margin-bottom: 5px;
+				margin-top: 5px;
+			}
+
+			#stream paper-button {
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+				--paper-button: {
+					padding: 0;
+					font-size: 16px;
+					font-weight: bold;
+					background-color: var(--bg-color);
+			}
+
+			#typeahead-container {
+				@apply(--layout-vertical);
+				@apply(--layout-end);
+			}
+
+			#typeahead {
+				width: 240px;
+				margin-top: -26px;
+			}
+
+			#edit-ctrls {
+				@apply(--layout-horizontal);
+				margin-top: 32px;
+			}
+
+			#b-off {
+				margin-left: 0;
+
+			}
+
+			#b-on {
+				margin-right: 0;
+
+
+
+			paper-button {
+				@apply(--layout-horizontal);
+				@apply(--layout-center-center);
+			}
+			
+			paper-slider {
+				@apply(--layout-horizontal);
+				@apply(--layout-center-center);
+			}
+
+		
+		</style>
+		<div id="label">Music Control</div>
+		<div align="center" id="stream">
+		<div class="layout horizontal">
+			<paper-button id="boff" class="nodecg-info" on-tap="off" raised>
+				<iron-icon icon="arrow-back"></iron-icon>
+				Music off
+			</paper-button>
+			<paper-button id="bon" class="nodecg-info" on-tap="on" raised>
+				<iron-icon icon="arrow-forward"></iron-icon>
+				Music on
+			</paper-button>
+		<div align=center>Volume Music<br>
+		<paper-slider id="volume" value="50" max="100" on-change="volume"></paper-slider></div>
+		</div></div>
+		
+		<nodecg-toast id="toast"></nodecg-toast>
+
+	</template>
+
+	<script src="zsr-music.js"></script>
+</dom-module>

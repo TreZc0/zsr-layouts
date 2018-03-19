@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gameboy, 3 Player</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<link rel="import" href="../shared/imports/gsap.html">
+	<link rel="import" href="elements/gdq-nameplate/gdq-nameplate.html">
+	<link rel="import" href="elements/zsr-runinfo/zsr-runinfo.html">
+	<link rel="import" href="elements/zsr-timer/zsr-timer.html">
+	<link rel="import" href="elements/gdq-twitter/gdq-twitter.html">
+	<link rel="import" href="elements/gdq-sponsors/gdq-sponsors.html">
+	<link rel="import" href="elements/twitch-player/twitch-player.html">
+	<link rel="import" href="../../lfg-siphon/graphics/twitch-chat.html">
+	<link rel="import" href="elements/zsr-discord-voice/zsr-discord-voice.html">
+	
+	<custom-style>
+		<style>
+			gdq-nameplate {
+				--gdq-nameplate-width: 330px;
+			}
+
+			gdq-nameplate:nth-of-type(1) {
+				top: 185px;
+				left: 441px;
+			}
+
+			gdq-nameplate:nth-of-type(2) {
+				top: 240px;
+				right: 445px;
+			}
+
+			gdq-nameplate:nth-of-type(3) {
+				top: 297px;
+				left: 478px;
+			}
+
+			zsr-runinfo {
+				left: 445px;
+				top: 0px;
+				width: 392px;
+				height: 173px;
+				--gdq-runinfo-misc-height: 58px;
+			}
+
+			zsr-timer {
+				left: 900px;
+				top: 440px;
+				height: 120px;
+				width: 380px;
+				padding-bottom: 7px;
+				font-size: 60px;
+			}
+
+			gdq-twitter {
+				--gdq-twitter-body: {
+					font-size: 21px;
+					padding-top: 50px;
+				};
+				--gdq-twitter-namebar: {
+					width: 323px;
+					height: 54px;
+					margin-bottom: -12px;
+					margin-left: 35px;
+					padding-bottom: 12px;
+					font-size: 21px;
+				};
+			}
+
+			gdq-twitter,
+			gdq-sponsors {
+				bottom: 0;
+				left: 443px;
+				width: 395px;
+				height: 270px;
+			}
+			
+			twitch-chat {
+				left: 425px;
+				top: 493px;
+			}
+			
+			zsr-discord-voice {
+				--zsr-discord-voice-min-width: 120px;
+				position: absolute; 
+				left:900px; 
+				top: 320px; 
+				z-index: 10
+			}
+		</style>
+	</custom-style>
+</head>
+<body>
+	<div id="container">
+		<img id="addon" src="img/backgrounds/gb3_addon.png">
+		<img id="background" src="img/backgrounds/gameboy_3_bg.png">
+		<zsr-runinfo></zsr-runinfo>
+		<zsr-discord-voice tablewidth="380" columnsperline="3"></zsr-discord-voice>
+		<zsr-timer></zsr-timer>
+		<gdq-sponsors></gdq-sponsors>
+		<gdq-twitter></gdq-twitter>
+		<gdq-nameplate index="0" attach-left></gdq-nameplate>
+		<gdq-nameplate index="1" attach-right></gdq-nameplate>
+		<gdq-nameplate index="2" attach-bottom></gdq-nameplate>
+		<img id="foreground" src="img/backgrounds/gameboy_3_fg.png">
+
+	</div>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			TweenLite.to(document.body, 0.333, {
+				opacity: 1,
+				ease: Power1.easeOut
+			});
+		});
+	</script>
+<div style="width: 367px; height: 330px; overflow: hidden; position: absolute; left:72px; z-index: -20"><div id="twitch-streamA"></div></div>
+<div style="width: 367px; height: 330px; overflow: hidden; position: absolute; left:840px; top:0px; z-index: -20"><div id="twitch-streamB"></div></div>
+<div style="width: 367px; height: 330px; overflow: hidden; position: absolute; left:455px; top:336px; z-index: -20"><div id="twitch-streamC"></div></div>
+<twitch-player></twitch-player>
+<div style="width: 367px; height: 330px; overflow: hidden; position: absolute; left:0px; top: 335px; z-index: 10">
+<twitch-chat class="dark" maxMessages="10"></twitch-chat><div>
+</body>
+</html>

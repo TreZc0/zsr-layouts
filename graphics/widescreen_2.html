@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Widescreen, 2 Player</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<link rel="import" href="../shared/imports/gsap.html">
+	<link rel="import" href="elements/gdq-nameplate/gdq-nameplate.html">
+	<link rel="import" href="elements/zsr-runinfo/zsr-runinfo.html">
+	<link rel="import" href="elements/zsr-timer/zsr-timer.html">
+	<link rel="import" href="elements/gdq-twitter/gdq-twitter.html">
+	<link rel="import" href="elements/gdq-sponsors/gdq-sponsors.html">
+	<link rel="import" href="elements/twitch-player/twitch-player.html">
+	<link rel="import" href="../../lfg-siphon/graphics/twitch-chat.html">
+	<link rel="import" href="elements/zsr-discord-voice/zsr-discord-voice.html">
+	<custom-style>
+		<style>
+			gdq-nameplate {
+				top: 405px;
+				--gdq-nameplate-width: 349px;
+			}
+
+			gdq-nameplate:nth-of-type(1) {
+				right: 851px;
+			}
+
+			gdq-nameplate:nth-of-type(2) {
+				left: 851px;
+			}
+
+			zsr-runinfo {
+				left: 0;
+				bottom: 58px;
+				width: 428px;
+				height: 167px;
+				--gdq-runinfo-misc-height: 50px;
+				--gdq-runinfo-misc-font-size: 24px;
+			}
+
+			zsr-timer {
+				left: 0;
+				bottom: 0;
+				height: 58px;
+				width: 428px;
+				padding-bottom: 7px;
+				--zsr-timer-font-size: 48px;
+			}
+
+			gdq-twitter {
+				bottom: 0;
+				right: 0;
+				width: 426px;
+				height: 265px;
+
+				--gdq-twitter-body: {
+					font-size: 22px;
+					padding-top: 60px;
+				};
+				--gdq-twitter-namebar: {
+					width: 344px;
+					height: 55px;
+					margin-bottom: -12px;
+					padding-bottom: 12px;
+					font-size: 21px;
+				};
+			}
+
+			gdq-sponsors {
+				bottom: 0;
+				right: 0;
+				width: 426px;
+				height: 219px;
+			}
+		
+			zsr-discord-voice {
+				--zsr-discord-voice-min-width: 171px;
+				position: absolute; 
+				left: 950px; 
+				top: 435px; 
+				z-index: 10
+			}
+		</style>
+	</custom-style>
+</head>
+<body>
+	<div id="container">
+		<img id="background" src="img/backgrounds/widescreen_2_bg.png">
+		<div style="width: 380px; height: 230px; overflow: visible"> 
+		<zsr-discord-voice tablewidth="330" columnsperline="1"></zsr-discord-voice> </div>
+		<zsr-runinfo max-name-size="40"></zsr-runinfo>
+		<zsr-timer></zsr-timer>
+		<gdq-sponsors></gdq-sponsors>
+		<gdq-twitter></gdq-twitter>
+		<gdq-nameplate index="0" attach-right></gdq-nameplate>
+		<gdq-nameplate index="1" attach-left></gdq-nameplate>
+		<img id="foreground" src="img/backgrounds/widescreen_2_fg.png">
+	</div>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			TweenLite.to(document.body, 0.333, {
+				opacity: 1,
+				ease: Power1.easeOut
+			});
+		});
+	</script>
+<div style="width: 640px; height: 360px; overflow: hidden; position: absolute; left:0px; top: 33px; z-index: -20"><div id="twitch-streamA"></div></div>
+<div style="width: 640px; height: 360px; overflow: hidden; position: absolute; right:0px; top: 33px; z-index: -20"><div id="twitch-streamB"></div></div>
+<twitch-player></twitch-player>
+<div style="width: 420px; height: 255px; overflow: hidden; position: absolute; left:430px; top: 400px; z-index: -10">
+<twitch-chat class="dark" maxMessages="9"></twitch-chat><div>
+</body>
+</html>

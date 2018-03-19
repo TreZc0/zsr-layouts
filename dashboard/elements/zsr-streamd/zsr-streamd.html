@@ -1,0 +1,168 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/nodecg-replicant/nodecg-replicant.html">
+<link rel="import" href="../../../bower_components/polymer/lib/mixins/mutable-data.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../../../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../../../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../../../bower_components/nodecg-toast/nodecg-toast.html">
+
+
+<dom-module id="zsr-streamd">
+	<template>
+		<style>
+			:host {
+				display: block;
+				@apply --layout-vertical;
+			}
+			
+			#label {
+				font-size: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				background-color: #C4C4C4;
+				height: 29px;
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+			}
+			#delay {
+				text-transform: lowercase;
+			}
+			
+			#label2 {
+				font-size: 14px;
+				font-weight: bold;
+				text-transform: uppercase;
+				height: 29px;
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+				margin-right: 20px;
+			}
+
+			#stream {
+				@apply --layout-center-center;
+				@apply --layout-around-justified;
+				@apply --layout-flex-none;
+				font-weight: 700;
+				height: 105px;
+			}
+			
+			
+			#stream paper-button {
+				width: 128px;
+				height: 60px;
+				margin: 6px 3px;
+				margin-bottom: 10px;
+				margin-top: 5px;
+			}
+
+			#stream paper-button {
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+				--paper-button: {
+					color: black;
+					padding: 0;
+					font-size: 16px;
+					font-weight: bold;
+					background-color: var(--bg-color);
+				}
+			}
+			#typeahead-container {
+				@apply(--layout-vertical);
+				@apply(--layout-end);
+			}
+
+			#typeahead {
+				width: 240px;
+				margin-top: -26px;
+			}
+
+			#edit-ctrls {
+				@apply(--layout-horizontal);
+				margin-left: 8px;
+				color: black;
+			}
+
+			#mute {
+				margin-left: 5px;
+				margin-right: 0;
+				background-color:lightgrey;
+			}
+			 
+			paper-dropdown-menu, paper-listbox {
+				width: 280px;
+			}
+
+			paper-dropdown-menu {
+				height: 150px;
+				margin: auto;
+				display: block;
+			}
+			#refresh {
+				margin-right: 0;
+				margin-bottom: 5px;
+				background-color: lightgrey;
+			}
+			#pause {
+				margin-right: 0;
+				margin-bottom: 5px;
+				background-color:lightgrey;
+			}
+				
+			#resume {
+				margin-right: 5px;
+				margin-bottom: 5px;
+				background-color:lightgrey;
+			}
+			
+			paper-slider {
+				@apply(--layout-horizontal);
+				@apply(--layout-center-center);
+			}
+			paper-slider.blue {
+				--paper-slider-knob-color: var(--paper-blue-500);
+				--paper-slider-active-color: var(--paper-blue-500);
+			}
+		</style>
+
+		<div id="label">Stream D - Delay:&nbsp;<div id="delay"></div></div>
+		<div align="center" id="stream" class="layout vertical">
+		<div id="label2">Volume Stream <br>
+		<paper-slider id="volume" class="blue" value="0" max="100" on-change="volume"></paper-slider></div>
+		<!--
+		<div id="label2">Stream Assign <br>
+		<select id="dropdown" on-change="stream">
+			<option selected disabled>Assign Stream Solo</option>
+			<option value="zsrA">zsrA</option>
+			<option value="zsrB">zsrB</option>
+			<option value="zsrC">zsrC</option>
+		</select></div>
+		 -->
+		 <div id="edit-ctrls">
+			<paper-button id="mute" class="flex" on-tap="mute" raised>
+				<iron-icon icon="av:mic-off"></iron-icon>
+				<div style="margin-left: 5px;" align="left">Mute Stream D</div>
+			</paper-button>
+			<paper-button id="refresh" class="flex" on-tap="refresh" raised>
+				<iron-icon icon="autorenew"></iron-icon>
+				<div style="margin-left: 5px;" align="left">Refresh Stream D</div>
+			</paper-button>
+			<paper-button id="pause" class="nodecg-info" on-tap="pause" raised>
+				<iron-icon icon="pan-tool"></iron-icon>
+				<div style="margin-left: 5px;" align="left">Pause Stream D</div>
+			</paper-button>
+			<paper-button id="resume" class="nodecg-info" on-tap="resume" raised>
+				<iron-icon icon="send"></iron-icon>
+				<div style="margin-left: 5px;" align="left">Resume Stream D</div>
+			</paper-button>	
+		</div></div>
+		<nodecg-toast id="toast"></nodecg-toast>
+</template>
+
+	<script src="zsr-streamd.js"></script>
+</dom-module>

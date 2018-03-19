@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Endscreen</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<link rel="stylesheet" href="style/font/SF%20Pixelate.css">
+	<link rel="stylesheet" href="style/font/Triforce.css">
+	<link rel="import" href="../shared/imports/gsap.html">
+    <link rel="import" href="elements/zsr-break-music/zsr-break-music.html">
+	<style is="custom-style">
+		body {
+			font-family: 'SF Pixelate', sans-serif, 'Triforce';
+			letter-spacing: -0.025em;
+		}
+
+		#container {
+			height: 720px;
+		}
+
+		#logo {
+			position: absolute;
+			top: 0;
+			left: 395px;
+			z-index: 1;
+			transform: scale(0.85);
+		}
+
+		#overlay {
+			position: absolute;
+			top: 358px;
+			left: 280px;
+		}
+
+		#nowPlaying {
+			color: white;
+			font-size: 23px;
+			width: 764px;
+			bottom: 4px;
+			left: 258px;
+			opacity: 0;
+			font-family: 'Montserrat';
+			font-size: 24px;
+		}
+		#ZSRLogo {
+			position: absolute;
+			top: 600px;
+			left: 305px;
+			z-index: 1;
+		}
+		
+		#Text {
+			position: absolute;
+			top: 300px;
+			left: 55px;
+			width: 1200px;
+			font-size: 80px;
+			font-family: 'Triforce';
+			font-weight: 800;
+			line-height: 1.2;
+			text-align: center;
+			color: #de2c26;
+			text-shadow:
+					-2px -2px 0 #000,
+					1px -1px 0 #000,
+					-1px 1px 0 #000,
+					1px 1px 0 #000;
+				-webkit-filter: drop-shadow(0 2px 0 black);
+		}
+
+		
+
+	</style>
+</head>
+<body>
+<div id="container">
+	<video id="background" autoplay loop src="img/countdown/BGVideo.webm"></video>
+	<img id="logo" src="img/countdown/countdown_logo.png">
+	<img id="ZSRLogo" src="img/countdown/red_logo.png">
+	<div class="shadow" id="Text">Thank you for watching<br>See you next Event!</div>
+	<zsr-break-music></zsr-break-music>
+</div>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		TweenLite.to(document.body, 0.333, {
+			opacity: 1,
+			ease: Power1.easeOut
+		});
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Countdown</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<link rel="stylesheet" href="style/font/Triforce.css">
+	<link rel="stylesheet" href="style/font/SF%20Pixelate.css">
+	<link rel="import" href="../shared/imports/gsap.html">
+    <link rel="import" href="elements/zsr-break-music/zsr-break-music.html">
+
+	<custom-style>
+		<style>
+			body {
+				font-family: 'Montserrat', sans-serif;
+				letter-spacing: -0.025em;
+			}
+
+			#container {
+				position: absolute;
+				top: 0;
+				height: 720px;
+			}
+
+			#logo {
+				position: absolute;
+				top: 0;
+				left: 388px;
+				transform: scale(1);
+				z-index: 1;
+			}
+
+			#nowPlaying {
+				color: white;
+				font-size: 23px;
+				width: 764px;
+				bottom: 7px;
+				left: 256px;
+				opacity: 0;
+			}
+
+			#countdown {
+				font-size: 80px;
+				font-family:  'Triforce';
+				color: #00ff00;
+				left: 509px;
+				top: 337px;
+				width: 264px;
+				letter-spacing: 0.075em;
+				display: flex;
+				justify-content: center;
+			}
+			
+			#game {
+				position: absolute;
+				top: 440px;
+				display: flex;
+				justify-content: center;
+				height: 221px;
+				z-index: 1;
+			}
+			#countdown,
+			#nowPlaying {
+				text-align: center;
+				white-space: nowrap;
+				position: absolute;
+				transform-origin: left;
+			}
+		</style>
+	</custom-style>
+</head>
+<body>
+<div id="container">
+	<img src="img/backgrounds/countdown_bg.png">
+	<img id="logo" src="img/countdown/countdown_logo.png">
+	<div id="countdown">
+		<div id="countdownMinutes"></div>
+		<div id="countdownColon">:</div>
+		<div id="countdownSeconds"></div>
+	</div>
+	<div style="display:flex; justify-content: center;"><img id="game"></div>
+    <zsr-break-music></zsr-break-music>
+	<div id="nowPlaying"></div>
+</div>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		TweenLite.to(document.body, 0.333, {
+			opacity: 1,
+			ease: Power1.easeOut
+		});
+	});
+</script>
+
+<script src="app/countdown.js"></script>
+</body>
+</html>

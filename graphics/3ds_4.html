@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3DS, 4 Player</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<link rel="import" href="../shared/imports/gsap.html">
+	<link rel="import" href="elements/gdq-nameplate/gdq-nameplate.html">
+	<link rel="import" href="elements/zsr-runinfo/zsr-runinfo.html">
+	<link rel="import" href="elements/zsr-timer/zsr-timer.html">
+	<link rel="import" href="elements/gdq-twitter/gdq-twitter.html">
+	<link rel="import" href="elements/gdq-sponsors/gdq-sponsors.html">
+	<link rel="import" href="elements/twitch-player/twitch-player.html">
+	<link rel="import" href="../../lfg-siphon/graphics/twitch-chat.html">
+	<link rel="import" href="elements/zsr-discord-voice/zsr-discord-voice.html">
+	
+	<custom-style>
+		<style>
+			gdq-nameplate {
+				--gdq-nameplate-width: 190px;
+			}
+
+			gdq-nameplate:nth-of-type(1) {
+				top: 180px;
+				left: 489px;
+			}
+
+			gdq-nameplate:nth-of-type(2) {
+				top: 240px;
+				right: 489px;
+			}
+
+			gdq-nameplate:nth-of-type(3) {
+				top: 392px;
+				left: 489px;
+			}
+
+			gdq-nameplate:nth-of-type(4) {
+				top: 452px;
+				right: 488px;
+			}
+
+			zsr-runinfo {
+				left: 487px;
+				top: 25px;
+				width: 304px;
+				height: 135px;
+				--gdq-runinfo-misc-height: 45px;
+				--gdq-runinfo-misc-font-size: 16px;
+			}
+
+			zsr-timer {
+				left: 489px;
+				top: 292px;
+				height: 82px;
+				width: 304px;
+				padding-bottom: 7px;
+				--zsr-timer-font-size: 52px;
+				z-index: 9;
+			}
+			
+			zsr-discord-voice {
+				--zsr-discord-voice-min-width: 165px;
+				position: absolute; 
+				left: 790px; 
+				top: 270px; 
+				z-index: 10
+			}
+		</style>
+	</custom-style>
+</head>
+<body>
+	<div id="container">
+		<img id="background" src="img/backgrounds/3ds_4_bg.png">
+		<div style="width: 515px; height: 150px; overflow: visible"> 
+		<zsr-discord-voice tablewidth="480" columnsperline="4"></zsr-discord-voice> </div>
+		<zsr-runinfo></zsr-runinfo>
+		<zsr-timer></zsr-timer>
+		<gdq-nameplate index="0" attach-left></gdq-nameplate>
+		<gdq-nameplate index="1" attach-right></gdq-nameplate>
+		<gdq-nameplate index="2" attach-left></gdq-nameplate>
+		<gdq-nameplate index="3" attach-right></gdq-nameplate>
+		<img id="foreground" src="img/backgrounds/3ds_4_fg.png">
+	</div>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			TweenLite.to(document.body, 0.333, {
+				opacity: 1,
+				ease: Power1.easeOut
+			});
+		});
+	</script>
+<div style="width: 487px; height: 292px; overflow: hidden; position: absolute; left:0px; z-index: -20"><div id="twitch-streamA"></div></div>
+<div style="width: 487px; height: 292px; overflow: hidden; position: absolute; right:0px; top:0px; z-index: -20"><div id="twitch-streamB"></div></div>
+<div style="width: 487px; height: 292px; overflow: hidden; position: absolute; left:0px; bottom:0px; z-index: -20"><div id="twitch-streamC"></div></div>
+<div style="width: 487px; height: 292px; overflow: hidden; position: absolute; right:0px; bottom:0px; z-index: -20"><div id="twitch-streamD"></div></div>
+<twitch-player></twitch-player>
+<div style="width: 275px; height: 150px; overflow: hidden; position: absolute; left:490px; top: 510px; z-index: 10">
+<twitch-chat class="dark" maxMessages="7"></twitch-chat><div>
+</body>
+</html>

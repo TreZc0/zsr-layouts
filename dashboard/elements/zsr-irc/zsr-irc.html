@@ -1,0 +1,144 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/nodecg-replicant/nodecg-replicant.html">
+<link rel="import" href="../../../bower_components/polymer/lib/mixins/mutable-data.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../../../bower_components/nodecg-toast/nodecg-toast.html">
+
+
+<dom-module id="zsr-irc">
+	<template>
+		<style>
+			:host {
+				display: block;
+				@apply --layout-vertical;
+			}
+			
+			#label {
+				font-size: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				background-color: #C4C4C4;
+				height: 29px;
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+			}
+			
+			#label2 {
+				font-size: 14px;
+				font-weight: bold;
+				text-transform: uppercase;
+				height: 29px;
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+				margin-right: 20px;
+			}
+
+			#stream {
+				@apply --layout-center;
+				@apply --layout-around-justified;
+				@apply --layout-flex-none;
+				font-weight: 700;
+				height: 105px;
+			}
+			
+			
+			#stream paper-button {
+				width: 128px;
+				height: 60px;
+				margin: 6px 3px;
+				margin-bottom: 10px;
+				margin-top: 5px;
+			}
+
+			#stream paper-button {
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+				--paper-button: {
+					color: white;
+					padding: 0;
+					font-size: 16px;
+					font-weight: bold;
+					background-color: var(--bg-color);
+				}
+
+			#typeahead-container {
+				@apply(--layout-vertical);
+				@apply(--layout-end);
+			}
+
+			#typeahead {
+				width: 240px;
+				margin-top: -26px;
+			}
+
+			#edit-ctrls {
+				@apply(--layout-horizontal);
+				margin-top: 32px;
+			}
+
+			#mute {
+				margin-right: 0;
+				background-color:black;
+			}
+			 
+			paper-dropdown-menu, paper-listbox {
+				width: 280px;
+			}
+
+			paper-dropdown-menu {
+				height: 150px;
+				margin: auto;
+				display: block;
+			}
+			
+			#pause {
+				margin-right: 0;
+				margin-bottom: 5px;
+				background-color:black;
+			}
+				
+			#resume {
+				margin-right: 0;
+				margin-bottom: 5px;
+				background-color:black;
+			}
+
+			
+			paper-slider {
+				@apply(--layout-horizontal);
+				@apply(--layout-center-center);
+			}
+			paper-slider.green {
+				--paper-slider-knob-color: var(--paper-green-500);
+				--paper-slider-active-color: var(--paper-green-500);
+			}
+			
+		</style>
+		<div id="stream" class="layout vertical"><paper-input id="srlID" placeholder="SRL.com Race ID"></paper-input></div>
+
+		<div class="layout horizontal">
+				<paper-button id="setRaceID" class="flex" on-tap="_setRaceID" raised>
+				<div align=left>Set ID</div>
+			</paper-button>
+		<paper-button id="import" class="nodecg-info" on-tap="_importRunners" raised>
+				<div align=center>Import Runners</div>
+		</paper-button>	
+		<paper-button id="clear" class="nodecg-info" on-tap="_clear" raised>
+				<div align=center>Clear</div>
+		</paper-button>	
+		</div>
+		<nodecg-toast id="toast"></nodecg-toast>
+</template>
+
+	<script src="zsr-irc.js"></script>
+</dom-module>

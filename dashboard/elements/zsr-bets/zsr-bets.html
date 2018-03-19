@@ -1,0 +1,126 @@
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/polymer/lib/mixins/mutable-data.html">
+<link rel="import" href="../../../shared/style/zsr-checkbox-style.html">
+<link rel="import" href="../../../bower_components/nodecg-toast/nodecg-toast.html">
+
+<dom-module id="zsr-bets">
+	<template>
+		<style include="zsr-checkbox-style">
+			:host {
+				display: block;
+				@apply --layout-vertical;
+			}
+
+			.header {
+				font-size: 13px;
+				font-weight: 500;
+				border-bottom: 1px solid black;
+				margin-bottom: 5px;
+				user-select: none;
+			}
+			
+			#label {
+				font-size: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				background-color: #C4C4C4;
+				height: 29px;
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+			}
+			
+			.group {
+				@apply --layout-vertical;
+				padding: 16px;
+				margin-bottom: 5px;
+			}
+			#blocks {
+				@apply --layout-horizontal;
+				
+			}
+
+			#columns {
+				@apply --layout-horizontal;
+			}
+
+			#columns > * {
+				@apply --layout-flex;
+				margin: 0 7px;
+			}
+
+			#columns > :first-child {
+				margin-left: 0;
+			}
+
+			#columns > :last-child {
+				margin-right: 0;
+			}
+
+            #stream paper-button {
+				width: 128px;
+				height: 60px;
+				margin: 6px 3px;
+				margin-bottom: 10px;
+				margin-top: 5px;
+			}
+
+			#stream paper-button {
+				@apply --layout-horizontal;
+				@apply --layout-center-center;
+				--paper-button: {
+					color: white;
+					padding: 0;
+					font-size: 16px;
+					font-weight: bold;
+					background-color: var(--bg-color);
+				}
+			#stream paper-checkbox id {
+                    color: red;
+                }
+
+		</style>
+		<div id="blocks">
+			<div id="group" style="width: 350px; margin-right: 50px;">
+				<div id="label">Active Bets Premium</div>		
+
+				<section>
+					<div class="group" style="display:block; height:420px;overflow-y: auto;">
+						<template is="dom-repeat" items="[[premiumBets]]" mutable-data>
+							<paper-checkbox id="premium_[[item.name]]" label="[[item.name]]" checked="[[item.checked]]">[[item.name]] <span style="margin-left: 5px; font-weight: 800; color: #FF0000"; class="id">[[item.bet]]</span></paper-checkbox>
+						</template>
+						<paper-button id="assignStreams" class="nodecg-info" style="color:red" on-tap="_assignWinnerPremium" raised>
+							<iron-icon icon="send"></iron-icon>
+							<div align=right>Assign Winner Sub/Cheer</div>
+						</paper-button>
+						</div>
+				</section>
+			</div>
+			<div id="group" style="width: 350px;">		
+				<div id="label">Active Bets Other</div>	
+			
+				<section>
+						<div class="group" style="display:block;height:420px;overflow-y: auto;">
+						<template is="dom-repeat" items="[[otherBets]]" mutable-data>
+							<paper-checkbox id="others_[[item.name]]" label="[[item.name]]" checked="[[item.checked]]">[[item.name]] <span style="margin-left: 5px; font-weight: 800; color: #FF0000"; class="id">[[item.bet]]</span></paper-checkbox>
+						</template>
+						<paper-button id="assignStreams" class="nodecg-info" style="color:red" on-tap="_assignWinnerOther" raised>
+							<iron-icon icon="send"></iron-icon>
+							<div align=right>Assign Winner Other</div>
+						</paper-button>	
+						</div>
+				</section>
+			</div>
+		</div>
+
+
+
+		
+	<nodecg-toast id="toast"></nodecg-toast>
+	</template>
+
+	<script src="zsr-bets.js"></script>
+</dom-module>

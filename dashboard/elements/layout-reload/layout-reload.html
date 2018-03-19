@@ -1,0 +1,35 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/nodecg-replicant/nodecg-replicant.html">
+<link rel="import" href="../../../bower_components/polymer/lib/mixins/mutable-data.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../../../bower_components/nodecg-toast/nodecg-toast.html">
+
+
+<dom-module id="layout-reload">
+	<template>
+		<style>
+			:host {
+				display: block;
+				@apply --layout-vertical;
+				justify-content: space-around;
+			}
+			
+			paper-button {
+				margin: auto;
+				height: 60px;
+				justify-content: space-around;
+			}
+		</style>
+				<paper-button id="reload" class="flex" on-tap="_reload" raised>
+				<div align=center>Reload Layout Config</div>
+			</paper-button>
+		<nodecg-toast id="toast"></nodecg-toast>
+</template>
+
+	<script src="layout-reload.js"></script>
+</dom-module>

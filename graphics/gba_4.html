@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GBA, 4 Player</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<link rel="import" href="../shared/imports/gsap.html">
+	<link rel="import" href="elements/gdq-nameplate/gdq-nameplate.html">
+	<link rel="import" href="elements/zsr-runinfo/zsr-runinfo.html">
+	<link rel="import" href="elements/zsr-timer/zsr-timer.html">
+	<link rel="import" href="elements/gdq-twitter/gdq-twitter.html">
+	<link rel="import" href="elements/gdq-sponsors/gdq-sponsors.html">
+	<link rel="import" href="elements/twitch-player/twitch-player.html">
+	<link rel="import" href="../../lfg-siphon/graphics/twitch-chat.html">
+	<link rel="import" href="elements/zsr-discord-voice/zsr-discord-voice.html">
+	
+	<custom-style>
+		<style>
+			gdq-nameplate {
+				--gdq-nameplate-width: 190px;
+			}
+
+			gdq-nameplate:nth-of-type(1) {
+				top: 180px;
+				left: 492px;
+			}
+
+			gdq-nameplate:nth-of-type(2) {
+				top: 240px;
+				right: 492px;
+			}
+
+			gdq-nameplate:nth-of-type(3) {
+				top: 392px;
+				left: 492px;
+			}
+
+			gdq-nameplate:nth-of-type(4) {
+				top: 452px;
+				right: 492px;
+			}
+
+			zsr-runinfo {
+				left: 492px;
+				top: 17px;
+				width: 302px;
+				height: 155px;
+				--gdq-runinfo-misc-height: 50px;
+				--gdq-runinfo-misc-font-size: 18px;
+			}
+
+			zsr-timer {
+				left: 492px;
+				top: 292px;
+				height: 82px;
+				width: 302px;
+				padding-bottom: 7px;
+				--zsr-timer-font-size: 50px;
+				z-index: 9;
+			}
+			
+			zsr-discord-voice {
+				--zsr-discord-voice-min-width: 151px;
+				position: absolute; 
+				left: 492px; 
+				top: 490px; 
+				z-index: 10
+			}
+		</style>
+	</custom-style>
+</head>
+<body>
+	<div id="container">
+		<img id="background" src="img/backgrounds/gba_4_bg.png">
+		<div style="width: 302px; height: 115px; overflow: visible"> 
+		<zsr-discord-voice tablewidth="302" columnsperline="2"></zsr-discord-voice> </div>
+		<zsr-runinfo></zsr-runinfo>
+		<zsr-timer></zsr-timer>
+		<gdq-nameplate index="0" attach-left></gdq-nameplate>
+		<gdq-nameplate index="1" attach-right></gdq-nameplate>
+		<gdq-nameplate index="2" attach-left></gdq-nameplate>
+		<gdq-nameplate index="3" attach-right></gdq-nameplate>
+		<img id="foreground" src="img/backgrounds/gba_4_fg.png">
+	</div>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			TweenLite.to(document.body, 0.333, {
+				opacity: 1,
+				ease: Power1.easeOut
+			});
+		});
+	</script>
+<div style="width: 489px; height: 326px; overflow: hidden; position: absolute; left:0px; z-index: -20"><div id="twitch-streamA"></div></div>
+<div style="width: 489px; height: 326px; overflow: hidden; position: absolute; right:0px; top:0px; z-index: -20"><div id="twitch-streamB"></div></div>
+<div style="width: 489px; height: 326px; overflow: hidden; position: absolute; left:0px; bottom:0px; z-index: -20"><div id="twitch-streamC"></div></div>
+<div style="width: 489px; height: 326px; overflow: hidden; position: absolute; right:0px; bottom:0px; z-index: -20"><div id="twitch-streamD"></div></div>
+<twitch-player></twitch-player>
+</body>
+</html>

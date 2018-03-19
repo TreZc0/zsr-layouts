@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GBA, 3 Player</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<link rel="import" href="../shared/imports/gsap.html">
+	<link rel="import" href="elements/zsr-nameplate/zsr-nameplate.html">
+	<link rel="import" href="elements/zsr-runinfo/zsr-runinfo.html">
+	<link rel="import" href="elements/zsr-timer/zsr-timer.html">
+	<link rel="import" href="elements/gdq-twitter/gdq-twitter.html">
+	<link rel="import" href="elements/gdq-sponsors/gdq-sponsors.html">
+	<link rel="import" href="elements/twitch-player/twitch-player.html">
+	<link rel="import" href="../../lfg-siphon/graphics/twitch-chat.html">
+	<link rel="import" href="elements/zsr-discord-voice/zsr-discord-voice.html">
+	
+	<custom-style>
+		<style>
+			zsr-nameplate {
+				--zsr-nameplate-width: 170px;
+			}
+
+			zsr-nameplate:nth-of-type(1) {
+				top: 327px;
+				left: 70px;
+			}
+
+			zsr-nameplate:nth-of-type(2) {
+				top: 327px;
+				right: 70px;
+			}
+
+			zsr-nameplate:nth-of-type(3) {
+				bottom: 326px;
+				left: 556px;
+			}
+
+			zsr-runinfo {
+				left: 492px;
+				top: 17px;
+				width: 302px;
+				height: 166px;
+				--gdq-runinfo-misc-height: 60px;
+				--gdq-runinfo-misc-font-size: 18px;
+				
+			}
+
+			zsr-timer {
+				right: 0px;
+				top: 439px;
+				height: 122px;
+				width: 395px;
+				padding-bottom: 7px;
+				--zsr-timer-font-size: 40px;
+			}
+			
+			zsr-discord-voice {
+				--zsr-discord-voice-min-width: 151px;
+				left: 492px;
+				top: 140px; 
+				z-index: 10
+			}
+		</style>
+	</custom-style>
+</head>
+<body>
+	<div id="container">
+		<img id="background" src="img/backgrounds/gba_3_bg.png">
+		<div style="width: 302px; height: 56px; overflow: visible"> 
+<zsr-discord-voice tablewidth="302" columnsperline="2"></zsr-discord-voice> </div>
+		<zsr-runinfo></zsr-runinfo>
+		<zsr-timer></zsr-timer>
+		<zsr-nameplate index="0" attach-bottom></zsr-nameplate>
+		<zsr-nameplate index="1" attach-bottom></zsr-nameplate>
+		<zsr-nameplate index="2" attach-bottom></zsr-nameplate>
+		<img id="foreground" src="img/backgrounds/gba_3_fg.png">
+	</div>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			TweenLite.to(document.body, 0.333, {
+				opacity: 1,
+				ease: Power1.easeOut
+			});
+		});
+	</script>
+<div style="width: 489px; height: 326px; overflow: hidden; position: absolute; left:0px; z-index: -20"><div id="twitch-streamA"></div></div>
+<div style="width: 489px; height: 326px; overflow: hidden; position: absolute; right:0px; top:0px; z-index: -20"><div id="twitch-streamB"></div></div>
+<div style="width: 489px; height: 326px; overflow: hidden; position: absolute; left:396px; bottom:0px; z-index: -20"><div id="twitch-streamC"></div></div>
+<twitch-player></twitch-player>
+<div style="width: 390px; height: 290px; overflow: hidden; position: absolute; left: 0px; top: 375px; z-index: 10">
+<twitch-chat class="dark" maxMessages="9"></twitch-chat><div>
+</body>
+</html>

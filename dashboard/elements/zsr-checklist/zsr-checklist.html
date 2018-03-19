@@ -1,0 +1,74 @@
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../../bower_components/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../../../bower_components/polymer/lib/mixins/mutable-data.html">
+<link rel="import" href="../../../shared/style/zsr-checkbox-style.html">
+
+<dom-module id="zsr-checklist">
+	<template>
+		<style include="zsr-checkbox-style">
+			:host {
+				padding: 16px;
+				@apply --layout-vertical;
+			}
+
+			.header {
+				font-size: 13px;
+				font-weight: 500;
+				border-bottom: 1px solid black;
+				margin-bottom: 5px;
+				user-select: none;
+			}
+
+			.group {
+				@apply --layout-vertical;
+			}
+
+			#columns {
+				@apply --layout-horizontal;
+			}
+
+			#columns > * {
+				@apply --layout-flex;
+				margin: 0 7px;
+			}
+
+			#columns > :first-child {
+				margin-left: 0;
+			}
+
+			#columns > :last-child {
+				margin-right: 0;
+			}
+			paper-checkbox {
+			height: 40px;
+			}
+		</style>
+
+		<div id="columns">
+			<section>
+				<div class="header">Stream Tech Duties</div>
+				<div class="group">
+					<template is="dom-repeat" items="[[techStationDuties]]" mutable-data>
+						<paper-checkbox category="techStationDuties" checked="[[item.complete]]">[[item.name]]</paper-checkbox>
+					</template>
+
+				</div>
+			</section>
+
+			<section>
+				<div class="header">Race Duties</div>
+				<div class="group horizontal">
+					<template is="dom-repeat" items="[[raceDuties]]" mutable-data>
+						<paper-checkbox category="raceDuties" checked="[[item.complete]]">[[item.name]]</paper-checkbox>
+					</template>
+				</div>
+			</section>
+		</div>
+
+
+	</template>
+
+	<script src="zsr-checklist.js"></script>
+</dom-module>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3DS, 2 Player</title>
+	<link rel="stylesheet" href="style/layout.css">
+	<link rel="import" href="../shared/imports/gsap.html">
+	<link rel="import" href="elements/ds-nameplate/ds-nameplate.html">
+	<link rel="import" href="elements/gdq-runinfo/gdq-runinfo.html">
+	<link rel="import" href="elements/zsr-timer/zsr-timer.html">
+	<link rel="import" href="elements/gdq-twitter/gdq-twitter.html">
+	<link rel="import" href="elements/gdq-sponsors/gdq-sponsors.html">
+	<link rel="import" href="elements/twitch-player/twitch-player.html">
+	<link rel="import" href="elements/zsr-discord-voice/zsr-discord-voice.html">
+	
+	<custom-style>
+		<style>
+			ds-nameplate {
+				top: 386px;
+				--gdq-nameplate-width: 300px;
+			}
+
+			ds-nameplate:nth-of-type(1) {
+				left: 65px
+			}
+
+			ds-nameplate:nth-of-type(2) {
+				right: 65px;
+			}
+
+			gdq-runinfo {
+				bottom: 68px;
+				left: 365px;
+				width: 555px;
+				height: 146px;
+				--gdq-runinfo-misc-height: 43px;
+			}
+
+			zsr-timer {
+				left: 365px;
+				top: 390px;
+				height: 65px;
+				width: 555px;
+				padding-left: 12px;
+				font-size: 56px;
+				padding-bottom: 7px;
+			}
+
+			gdq-twitter {
+				bottom: 0;
+				right: 0;
+				width: 426px;
+				height: 180px;
+				padding-right: 12px;
+
+				--gdq-twitter-body: {
+					font-size: 25px;
+					padding-top: 50px;
+				};
+				--gdq-twitter-namebar: {
+					width: 344px;
+					height: 50px;
+					margin-bottom: -12px;
+					padding-bottom: 12px;
+					font-size: 21px;
+				};
+			}
+
+			gdq-sponsors {
+				bottom: 0;
+				right: 0;
+				width: 426px;
+				height: 140px;
+				padding-right: 12px;
+
+			}
+			
+			zsr-discord-voice {
+				position: absolute; 
+				bottom: 42px;
+				left: 359px;
+				z-index: 10
+			}
+				
+		</style>
+	</custom-style>
+</head>
+<body>
+	<div id="container">
+		<img id="background" src="img/backgrounds/3ds_2_bg.png">
+		<gdq-runinfo max-name-size="36" single-line-name></gdq-runinfo>
+		<zsr-timer></zsr-timer>
+		<gdq-sponsors></gdq-sponsors>
+		<gdq-twitter></gdq-twitter>
+		<ds-nameplate index="0" attach-right></ds-nameplate>
+		<ds-nameplate index="1" attach-left></ds-nameplate>
+		<zsr-discord-voice tablewidth="555" columnsperline="5"></zsr-discord-voice>
+		<img id="foreground" src="img/backgrounds/3ds_2_fg.png">
+		
+	</div>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			TweenLite.to(document.body, 0.333, {
+				opacity: 1,
+				ease: Power1.easeOut
+			});
+		});
+	</script>
+<div style="width: 640px; height: 384px; overflow: hidden; position: absolute; left:0px; z-index: -20"><div id="twitch-streamA"></div></div>
+<div style="width: 317px; height: 238px; overflow: hidden; position: absolute; left:50px; bottom: 0px; z-index: -20"><div id="twitch-streamB"></div></div>
+<div style="width: 640px; height: 384px; overflow: hidden; position: absolute; right: 0px; z-index: -20"><div id="twitch-streamC"></div></div>
+<div style="width: 317px; height: 238px; overflow: hidden; position: absolute; right:49px; bottom: 0px; z-index: -20"><div id="twitch-streamD"></div></div>
+<twitch-player></twitch-player>
+</body>
+</html>

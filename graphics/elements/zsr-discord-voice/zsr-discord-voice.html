@@ -1,0 +1,72 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../shared/style/zsr-text-styles.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../../bower_components/paper-badge/paper-badge.html">
+<link rel="import" href="../gdq-stepped-gradient-text/gdq-stepped-gradient-text.html">
+<link rel="import" href="../../../bower_components/polymer/lib/mixins/mutable-data.html">
+<link rel="import" href="../../../shared/style/zsr-input-style.html">
+<link rel="import" href="../../../bower_components/iron-icons/av-icons.html">
+<link rel="import" href="../../../bower_components/sc-fitted-text/sc-fitted-text.html">
+
+<dom-module id="zsr-discord-voice">
+	<template>
+		<style include="zsr-input-style">
+			:host {
+				position: absolute;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				white-space: nowrap;
+				color: black;
+			}
+			.fitted {
+				position:relative;
+				margin-left: 42px; 
+				margin-top: 10px;
+				color: white; /* For Browser Test */
+				font-weight: 600;
+				font-size: 24px;
+				font-family: Montserrat;
+			}
+			.badge {
+				--paper-badge-background: var(--paper-green-700);
+				--paper-badge-width: 20px;
+				--paper-badge-height: 20px;
+				--paper-badge-icon-width: 20px;
+				--paper-badge-icon-height: 20px;
+				position: relative;
+				top:-35px;
+				left: 20px;
+			}
+			.container {
+				display: table;
+				margin-bottom: -50px;
+			}
+			
+			table {
+				padding-left: 10px;
+				padding-right: 10px;
+				
+			}
+
+		</style>
+		<table>
+		<template is="dom-repeat" items="[[speakerLines]]" mutable-data>
+		<tr>
+			<template is="dom-repeat" items="[[item]]" mutable-data>
+				<td id="td_[[item.id]]">
+				<div id="container_[[item.id]]" class="container" tabindex="0"> 
+					<img id="avatar_[[item.id]" src="[[item.avatar]]" height="32" width="32" style="border-radius: 100%;position:relative; top: 42px  "/>
+					<sc-fitted-text class="fitted" id="name_[[item.id]]" text="[[item.name]]" max-width="[[textMaxLength]]"></sc-fitted-text>
+					<paper-badge class="badge" id="mic_[[item.id]]" style="visibility:hidden" icon="av:mic" for="avatar_[[item.id]]"></paper-badge>
+				</div></td>
+			</template></tr>
+		</template></table>
+
+		
+	</template>
+
+	<script src="zsr-discord-voice.js"></script>
+</dom-module>

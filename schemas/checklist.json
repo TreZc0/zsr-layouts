@@ -1,0 +1,55 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+
+	"definitions": {
+		"checklistGroup": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"name": {
+						"type": "string",
+						"required": true
+					},
+					"complete": {
+						"type": "boolean",
+						"required": true
+					}
+				}
+			}
+		}
+	},
+
+	"type": "object",
+	"properties": {
+		"raceDuties": {
+			"$ref": "#/definitions/checklistGroup"
+		},
+		"techStationDuties": {
+			"$ref": "#/definitions/checklistGroup"
+		}
+	},
+
+	"default": {
+		"raceDuties": [
+			{"name": "Race Set Up", "complete": false},
+			{"name": "Commentary Roles Assigned", "complete": false},
+			{"name": "Bot Joined Commentary Channel", "complete": false},
+			{"name": "Timer Reset", "complete": false},
+			{"name": "Runners Selected", "complete": false},
+			{"name": "Player A Set As Leader", "complete": false},
+			{"name": "OBS Connected", "complete": false},
+			{"name": "Blocking Runners Removed", "complete": false}
+		],
+		"techStationDuties": [
+			{"name": "NodeCG Audio Routing enabled", "complete": false},
+			{"name": "OBS NodeCG Login (Reload Omnibar)", "complete": false},
+			{"name": "Discord Audio Tested", "complete": false},
+			{"name": "NodeCG Audio Tested", "complete": false},
+			{"name": "ZSR Intro Set Up (If Needed)", "complete": false},
+			{"name": "Checked Runner Layouting/Audio", "complete": false},
+			{"name": "Commentator Volume Balanced", "complete": false}
+		]
+	}
+}
