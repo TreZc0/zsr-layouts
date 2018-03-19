@@ -1924,57 +1924,6 @@ function _postResults(channel)
 		}
 	});
 
-	if (testMode)
-		return;
-
-	//Write new race result into archive.json
-	let archivePath = path.resolve(process.env.NODECG_ROOT, 'bundles/external-assets/graphics/img/results/json/archive.json');
-	let json = editJsonFile(archivePath);
-
-	let raceCount = json.get("raceCount");	
-
-	let resultPage = json.get("results");
-
-	//Prettyfy results
-	var archiveRanking = [];
-
-	//Finished Runners first
-	console.log("New Racecount: " + (raceCount + 1).toString() + " write data in results!");
-
-	leaderboard.value.ranking.forEach(finishedRunner => {
-
-		if (finishedRunner.status === "Finished")
-			archiveRanking.push(finishedRunner);
-	});
-
-	//Quitters last
-	leaderboard.value.ranking.forEach(finishedRunner => {
-
-		if (finishedRunner.status === "Forfeit")
-			archiveRanking.push({ name: finishedRunner.name, stream: finishedRunner.stream, status: "Forfeit", place: "-", timeFormat: "" });
-	});
-
-	let resultEntry = {
-		"name": currentRun.value.name,
-		"shortName": currentRun.value.shortName,
-		"longName": currentRun.value.longName,
-		"category": currentRun.value.category,
-		"date": currentRun.value.racetime,
-		"rankings": archiveRanking
-	};
-
-	if (resultPage)
-		resultPage.unshift(resultEntry);
-	else
-		resultPage = [resultEntry];
-
-	json.set("results", resultPage);
-
-	//Increase count
-	raceCount++;
-	json.set("raceCount", raceCount);
-
-	json.save();
 }
 
 nodecg.listenFor('assignmentsChanged', _assignmentsChanged);
